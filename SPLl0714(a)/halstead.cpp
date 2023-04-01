@@ -75,7 +75,25 @@ void printHalsteadResult(int i) {
 
 void printHalsteadMain(void) {
 
+        int totalUniqueOperators = 0;
+        int totalUniqueOperands = 0;
+        int totalOperators = 0;
+        int totalOperands = 0;
+        int programVocabulary = 0;
+        for(int i=0; i < savedResult.size(); i++){
+            totalUniqueOperators += savedResult[i].uniqueOperators;
+            totalUniqueOperands += savedResult[i].uniqueOperands;
+            totalOperators += savedResult[i].operators;
+            totalOperands += savedResult[i].operands;
+        }
+        programVocabulary = totalUniqueOperators + totalUniqueOperands;
+
+        printf("Unique Operators: %d\n",totalUniqueOperators);
+        printf("Unique Operands: %d\n",totalUniqueOperands);
+        printf("Total Operators: %d\n",totalOperators);
+        printf("Total Operands: %d\n",totalOperands);
         printf("Program Length: %.2f\n", overallHalsteadResult.programLength);
+        printf("Program Vocabulary:%d\n", programVocabulary);
         printf("Volume: %.2f\n", overallHalsteadResult.volume);
         printf("Difficulty: %.2f\n", overallHalsteadResult.difficulty);
         printf("Effort: %.2f\n", overallHalsteadResult.effort);
